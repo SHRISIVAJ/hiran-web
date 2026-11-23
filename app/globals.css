@@ -70,4 +70,4 @@ body {
   .js .reveal { transform: translateY(42px) scale(0.97); filter: blur(6px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
   .js .reveal.in { filter: none; transform: none; }
 }
-[data-parallax], [data-hero-fade] { will-change: transform; }
+@media (pointer: fine) { [data-parallax], [data-hero-fade] { will-change: transform; } }

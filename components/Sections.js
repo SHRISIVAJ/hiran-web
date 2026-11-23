@@ -67,8 +67,7 @@ export function ProductCard({ product }) {
 export function PageHeader({ eyebrow, title, text, children }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
-      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl" />
-      <div className="absolute -bottom-32 left-10 h-72 w-72 rounded-full bg-emerald-200/30 blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_0%,rgba(153,246,228,0.45),transparent_40%),radial-gradient(circle_at_10%_100%,rgba(167,243,208,0.35),transparent_40%)]" />
       <div className="container-x relative pb-14 pt-28 sm:pb-20 sm:pt-36">
         {children}
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
@@ -85,8 +84,7 @@ export function CTABand() {
     <section className="py-16 sm:py-20">
       <div className="container-x">
         <div className="reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-600 via-teal-600 to-emerald-500 px-6 py-14 text-center shadow-xl shadow-teal-600/20 sm:px-12">
-          <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-emerald-300/20 blur-2xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_95%_0%,rgba(255,255,255,0.14),transparent_35%),radial-gradient(circle_at_0%_100%,rgba(110,231,183,0.22),transparent_40%)]" />
           <div className="relative">
             <h2 className="font-display text-3xl font-extrabold text-white sm:text-4xl">Need a bulk quote?</h2>
             <p className="mx-auto mt-3 max-w-xl text-teal-50">

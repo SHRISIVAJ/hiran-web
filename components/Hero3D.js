@@ -22,7 +22,7 @@ export default function Hero3D({ children, className = "" }) {
         cleanup = m.mountHero(canvasRef.current, sectionRef.current, themes, {
           onReady: () => setReady(true),
           onInteract: () => setTouched(true),
-          onFallback: () => setReady(false), // slow device → keep the still image
+          onFallback: () => setReady(false), // only if WebGL is not available at all
         });
       });
     const idle = window.requestIdleCallback
@@ -38,12 +38,17 @@ export default function Hero3D({ children, className = "" }) {
 
   return (
     <section ref={sectionRef} className={`relative isolate overflow-hidden bg-teal-50 select-none ${className}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/hero-3d.webp"
-        alt=""
-        className={`pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}
-      />
+      {/* placeholder = exact first frame of the 3D scene, so the hand-over is seamless */}
+      <picture>
+        <source media="(max-width: 767px)" srcSet="/images/hero-3d-mobile.webp" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/hero-3d.webp"
+          alt=""
+          fetchPriority="high"
+          className={`pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover transition-opacity duration-700 ${ready ? "opacity-0" : "opacity-100"}`}
+        />
+      </picture>
       <div ref={canvasRef} className="absolute inset-0 -z-10" aria-hidden="true" />
       {/* soft glow behind the text keeps it readable over the 3D objects */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_34%_36%_at_50%_52%,rgba(255,255,255,0.72),rgba(255,255,255,0.3)_60%,transparent_100%)]" />

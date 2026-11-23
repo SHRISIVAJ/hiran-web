@@ -13,6 +13,7 @@ export default function Reveal() {
   useEffect(() => {
     document.documentElement.classList.add("js");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const touch = window.matchMedia("(pointer: coarse)").matches; // phones: no parallax (keeps scrolling smooth)
 
     // --- reveal on scroll, staggered among siblings ---
     const els = [...document.querySelectorAll(".reveal:not(.in)")];
@@ -57,7 +58,7 @@ export default function Reveal() {
           return true;
         });
       }
-      if (reduce) return;
+      if (reduce || touch) return;
       for (const el of par) {
         const r = el.parentElement.getBoundingClientRect();
         if (r.bottom < -200 || r.top > vh + 200) continue;

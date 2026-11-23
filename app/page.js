@@ -110,7 +110,7 @@ export default function Home() {
         <div className="relative aspect-[1600/873] sm:hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/products/citric-acid-monohydrate-3.webp"
+            src="/images/products/citric-acid-monohydrate-3-800.webp"
             alt="Chemical processing plant and warehouse"
             loading="lazy"
             className="h-full w-full object-cover"

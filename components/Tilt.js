@@ -23,7 +23,7 @@ export default function Tilt({ children, className = "", max = 7 }) {
       ref={ref}
       onPointerMove={onMove}
       onPointerLeave={reset}
-      className={`tilt transition-transform duration-200 ease-out will-change-transform ${className}`}
+      className={`tilt transition-transform duration-200 ease-out ${className}`}
     >
       {children}
     </div>

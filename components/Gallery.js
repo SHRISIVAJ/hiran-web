@@ -78,6 +78,8 @@ export default function Gallery({ images, className = "", aspect = "aspect-[16/1
             <img
               key={img.src}
               src={img.src}
+              srcSet={`${img.src.replace(".webp", "-800.webp")} 800w, ${img.src} 1600w`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
               alt={img.alt}
               loading={priority && i === 0 ? "eager" : "lazy"}
               draggable={false}
@@ -120,7 +122,7 @@ export default function Gallery({ images, className = "", aspect = "aspect-[16/1
               style={{ "--tw-ring-color": i === index ? accent : "transparent" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img.src} alt="" className="aspect-[16/10] w-full object-cover transition hover:scale-105" loading="lazy" />
+              <img src={img.src.replace(".webp", "-800.webp")} alt="" className="aspect-[16/10] w-full object-cover transition hover:scale-105" loading="lazy" />
             </button>
           ))}
         </div>

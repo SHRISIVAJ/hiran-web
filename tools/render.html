@@ -25,7 +25,10 @@
         if (only && only !== p.slug) continue;
         out[p.slug] = renderProductImage(p, themes[p.theme]);
       }
-      if (!only || only === "hero") out.hero = renderPoster(themes);
+      if (!only || only === "hero") {
+        out.hero = renderPoster(themes);
+        out.heroMobile = renderPoster(themes, 780, 1500);
+      }
       document.title = "DONE";
     } catch (e) {
       out.error = String(e && e.stack || e);

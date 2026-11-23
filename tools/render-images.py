@@ -25,7 +25,8 @@ if not data or "error" in data:
     print("RENDER FAILED:", data.get("error", dom[-1500:])); sys.exit(1)
 os.makedirs(os.path.join(ROOT, "public", "images", "products"), exist_ok=True)
 for key, durl in data.items():
-    path = os.path.join(ROOT, "public", "images", "hero-3d.webp" if key == "hero" else f"products/{key}.webp")
+    name = {"hero": "hero-3d.webp", "heroMobile": "hero-3d-mobile.webp"}.get(key, f"products/{key}.webp")
+    path = os.path.join(ROOT, "public", "images", name)
     with open(path, "wb") as f:
         f.write(base64.b64decode(durl.split(",", 1)[1]))
     print("saved", os.path.relpath(path, ROOT), os.path.getsize(path) // 1024, "KB")
