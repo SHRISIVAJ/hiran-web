@@ -9,7 +9,7 @@ export const site = {
   tagline: "Industrial & Food Grade Chemicals — Supplied Right.",
   description:
     "Trusted supplier of Soda Ash Light, Caustic Soda Flakes and Citric Acid Monohydrate for textile, detergent, glass, water treatment and food industries.",
-  url: "https://www.example.com", // PLACEHOLDER domain
+  url: "https://teena-alpha.vercel.app", // change when a custom domain is added
   phone: "+91 98765 43210", // PLACEHOLDER
   whatsapp: "919876543210", // PLACEHOLDER — country code + number, no "+" or spaces
   email: "sales@example.com", // PLACEHOLDER
