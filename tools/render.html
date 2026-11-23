@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Renders product images + hero poster. Run via tools/render-images.sh -->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/node_modules/three/build/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <pre id="out"></pre>
+  <script type="module">
+    import { renderProductImage } from "/lib/scene3d.js";
+    import { renderPoster } from "/lib/heroScene.js";
+    import { products, themes } from "/data/products.js";
+    const out = {};
+    try {
+      const only = new URLSearchParams(location.search).get("only");
+      for (const p of products) {
+        if (only && only !== p.slug) continue;
+        out[p.slug] = renderProductImage(p, themes[p.theme]);
+      }
+      if (!only || only === "hero") out.hero = renderPoster(themes);
+      document.title = "DONE";
+    } catch (e) {
+      out.error = String(e && e.stack || e);
+      document.title = "ERROR";
+    }
+    document.getElementById("out").textContent = JSON.stringify(out);
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* "navy-*" token names kept for compatibility — now a deep teal scale */
+  --color-navy-950: #042f2e;
+  --color-navy-900: #134e4a;
+  --color-navy-800: #115e59;
+  --color-navy-700: #0f766e;
+  --color-brand: #0d9488;
+  --color-brand-light: #2dd4bf;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .container-x { padding-inline: 1.5rem; }
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.tilt { transform-style: preserve-3d; }
+.tilt-glare {
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 0%), rgba(255,255,255,0.35), transparent 45%);
+  mix-blend-mode: soft-light;
+}
+
+@keyframes float-y { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+.float-slow { animation: float-y 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .float-slow { animation: none; } }
+
+/* Reveal on scroll (progressive: content is visible without JS) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .js .reveal.in { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .js .reveal { transform: translateY(42px) scale(0.97); filter: blur(6px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
+  .js .reveal.in { filter: none; transform: none; }
+}
+[data-parallax], [data-hero-fade] { will-change: transform; }
