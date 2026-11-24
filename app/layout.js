@@ -29,7 +29,6 @@ export const metadata = {
     title: site.name,
     description: site.description,
   },
-  icons: { icon: "/icon.svg" },
 };
 
 export const viewport = { themeColor: "#0d9488" };
@@ -39,6 +38,7 @@ const orgSchema = {
   "@type": "Organization",
   name: site.name,
   url: site.url,
+  logo: `${site.url}/brand/logo-full.png`,
   email: site.email,
   telephone: site.phone,
   address: { "@type": "PostalAddress", streetAddress: site.address, addressCountry: "IN" },

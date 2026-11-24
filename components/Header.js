@@ -17,13 +17,15 @@ const nav = [
 export function Logo({ light = false }) {
   return (
     <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-sm">
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-          <path d="M12 2 20 7v10l-8 5-8-5V7l8-5Z" />
-          <circle cx="12" cy="12" r="3" />
-        </svg>
-      </span>
-      <span className={`font-display text-lg font-extrabold tracking-tight ${light ? "text-white" : "text-navy-900"}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/brand/logo-mark.png"
+        alt=""
+        width="40"
+        height="40"
+        className={`h-10 w-10 ${light ? "rounded-lg bg-white p-1" : ""}`}
+      />
+      <span className={`font-display text-xl font-extrabold uppercase tracking-wide ${light ? "text-white" : "text-[#22314a]"}`}>
         {site.shortName}
       </span>
     </Link>

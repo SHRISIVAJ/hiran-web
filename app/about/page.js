@@ -34,9 +34,9 @@ export default function AboutPage() {
               </div>
             )}
           </div>
-          <div className="reveal overflow-hidden rounded-3xl bg-gradient-to-br from-navy-800 to-navy-950 p-4">
+          <div className="reveal grid place-items-center rounded-3xl bg-gradient-to-br from-teal-50 via-white to-emerald-50 p-10 ring-1 ring-teal-100 sm:p-16">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/hero-3d.webp" alt="Chemical drums and bagged products ready for dispatch" className="w-full" loading="lazy" />
+            <img src="/brand/logo-full.png" alt={`${site.name} logo`} width="720" height="663" className="w-full max-w-[320px]" loading="lazy" />
           </div>
         </div>
       </section>
