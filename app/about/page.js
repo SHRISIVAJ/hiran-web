@@ -19,7 +19,7 @@ export default function AboutPage() {
             <h2 className="font-display text-3xl font-extrabold text-navy-900">A focused supplier for essential chemicals</h2>
             {/* PLACEHOLDER copy — replace with the client's story */}
             <p>
-              Since {site.founded}, {site.name} has supplied manufacturers with dependable industrial chemicals. We keep our
+              {site.founded ? `Since ${site.founded}, ` : ""}{site.name} supplies manufacturers with dependable industrial chemicals. We keep our
               range focused — Soda Ash Light, Caustic Soda Flakes and Citric Acid Monohydrate — so we can guarantee
               consistent quality, ready stock and quick dispatch.
             </p>
@@ -27,10 +27,12 @@ export default function AboutPage() {
               We work with textile processors, soap and detergent makers, glass units, water-treatment plants and food &amp;
               beverage companies. Every consignment is packed in moisture-proof bags and supported with a Certificate of Analysis.
             </p>
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="rounded-xl bg-slate-50 p-4"><p className="text-xs uppercase tracking-wide text-slate-400">GSTIN</p><p className="font-semibold text-navy-900">{site.gst}</p></div>
-              <div className="rounded-xl bg-slate-50 p-4"><p className="text-xs uppercase tracking-wide text-slate-400">IEC</p><p className="font-semibold text-navy-900">{site.iec}</p></div>
-            </div>
+            {(site.gst || site.iec) && (
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                {site.gst && <div className="rounded-xl bg-slate-50 p-4"><p className="text-xs uppercase tracking-wide text-slate-400">GSTIN</p><p className="font-semibold text-navy-900">{site.gst}</p></div>}
+                {site.iec && <div className="rounded-xl bg-slate-50 p-4"><p className="text-xs uppercase tracking-wide text-slate-400">IEC</p><p className="font-semibold text-navy-900">{site.iec}</p></div>}
+              </div>
+            )}
           </div>
           <div className="reveal overflow-hidden rounded-3xl bg-gradient-to-br from-navy-800 to-navy-950 p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}

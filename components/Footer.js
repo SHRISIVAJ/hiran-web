@@ -32,8 +32,8 @@ export default function Footer() {
             <li><Link href="/contact/" className="hover:text-white">Request a Quote</Link></li>
           </ul>
           <dl className="mt-5 space-y-1 text-xs text-slate-500">
-            <div>GSTIN: {site.gst}</div>
-            <div>IEC: {site.iec}</div>
+            {site.gst && <div>GSTIN: {site.gst}</div>}
+            {site.iec && <div>IEC: {site.iec}</div>}
           </dl>
         </div>
         <div>

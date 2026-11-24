@@ -10,15 +10,15 @@ export const site = {
   description:
     "Trusted supplier of Soda Ash Light, Caustic Soda Flakes and Citric Acid Monohydrate for textile, detergent, glass, water treatment and food industries.",
   url: "https://teena-alpha.vercel.app", // change when a custom domain is added
-  phone: "+91 98765 43210", // PLACEHOLDER
-  whatsapp: "919876543210", // PLACEHOLDER — country code + number, no "+" or spaces
-  email: "sales@example.com", // PLACEHOLDER
-  address: "Kerala, India", // PLACEHOLDER — add full street address
-  mapQuery: "Kerala, India", // used for the Google Map embed
+  phone: "+91 91881 80991",
+  whatsapp: "919188180991", // country code + number, no "+" or spaces
+  email: "kk1430434@gmail.com",
+  address: "India",
+  mapQuery: "India", // used for the Google Map embed
   hours: "Mon – Sat, 9:30 AM – 6:30 PM",
-  gst: "32XXXXXXXXXXXXX", // PLACEHOLDER (32 = Kerala)
-  iec: "XXXXXXXXXX", // PLACEHOLDER (Import Export Code)
-  founded: "2015", // PLACEHOLDER
+  gst: "", // add when available — hidden on the site while empty
+  iec: "", // Import Export Code — hidden while empty
+  founded: "", // year started — hidden while empty
 
   // Optional: Web3Forms access key (free at web3forms.com).
   // If empty, the quote form opens WhatsApp with the enquiry pre-filled.

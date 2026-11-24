@@ -21,7 +21,7 @@ export const metadata = {
     "caustic soda flakes supplier",
     "citric acid monohydrate food grade",
     "industrial chemical supplier India",
-    "chemical supplier Kerala",
+    "chemical supplier India",
   ],
   openGraph: {
     type: "website",
